@@ -1,0 +1,42 @@
+{
+  "name": "collabmed",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port=3000",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.7.13",
+    "@heroicons/vue": "^2.0.17",
+    "@vuepic/vue-datepicker": "^4.4.0",
+    "autoprefixer": "^10.4.13",
+    "axios": "^1.2.0-alpha.1",
+    "css-loader": "^6.5.1",
+    "file-loader": "^6.2.0",
+    "glob": "^7.2.0",
+    "html-loader": "^3.1.0",
+    "postcss": "^8.4.21",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.2.3",
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.3",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.2.7",
+    "vue": "^3.2.47",
+    "vue-router": "^4.0.13",
+    "vue3-datepicker": "^0.3.4",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@alpinejs/intersect": "^3.12.0",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "alpinejs": "^3.12.0",
+    "apexcharts": "^3.36.3",
+    "flatpickr": "^4.6.13",
+    "jsvectormap": "^1.5.1",
+    "vite": "^4.2.0"
+  }
+}

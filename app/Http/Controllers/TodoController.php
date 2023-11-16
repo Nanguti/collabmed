@@ -6,6 +6,7 @@ use App\Http\Resources\TodoResource;
 use Illuminate\Http\Request;
 use App\Models\Todo;
 use App\Repositories\Todo\TodoRepository;
+use Illuminate\Support\Facades\Log;
 
 class TodoController extends Controller
 {
@@ -40,6 +41,7 @@ class TodoController extends Controller
 
     public function update(Request $request, Todo $todo)
     {
+
         $this->todoRepository->updateTodo($todo, $request->all());
         return new TodoResource($todo);
         

@@ -17,12 +17,10 @@ class TodoResource extends JsonResource
         return [
            
             'todo_id' => $this->id,
-            'organization_id' => $this->organization_id,
             'title' => $this->title,
             'description' => $this->description,
             'status' => $this->status,
             'created_at' => (string) $this->created_at,
-            'updated_at' => (string) $this->updated_at,
           ];
     }
 }
