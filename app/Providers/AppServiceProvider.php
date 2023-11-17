@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use App\Repositories\TodoInterface;
-use App\Repositories\TodoRepository;
+use App\Repositories\Organization\OrganizationInterface;
+use App\Repositories\Organization\OrganizationRepository;
+use App\Repositories\Todo\TodoInterface;
+use App\Repositories\Todo\TodoRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,6 +17,10 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(TodoInterface::class, function () {
             return new TodoRepository();
+        });
+
+        $this->app->bind(OrganizationInterface::class, function () {
+            return new OrganizationRepository();
         });
     }
 

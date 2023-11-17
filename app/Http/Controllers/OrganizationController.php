@@ -4,48 +4,51 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\OrganizationResource;
 use App\Models\Organization;
+use App\Repositories\Organization\OrganizationRepository;
 use Illuminate\Http\Request;
 
 class OrganizationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    protected $organizationRepository;
+
+    public function __construct(OrganizationRepository $organizationRepository)
+    {
+        $this->organizationRepository = $organizationRepository;
+    }
+
     public function index()
     {
-        return OrganizationResource::collection(Organization::all());
+        $organizations = $this->organizationRepository->getAllOrganizations();
+        return OrganizationResource::collection($organizations);
+        
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    public function show(Organization $organization)
+    {
+        $organization = $this->organizationRepository->getOrganizationById($organization);
+        return OrganizationResource::collection($organization);
+    }
+
     public function store(Request $request)
     {
-        //
+        
+       $organization =  $this->organizationRepository->storeOrganization($request->all());
+       return new OrganizationResource($organization);
+        
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function update(Request $request, Organization $organization)
     {
-        //
+
+        $this->organizationRepository->updateOrganization($organization, $request->all());
+        return new OrganizationResource($organization);
+        
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroy(Organization $organization)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $this->organizationRepository->deleteOrganization($organization);
+        return response()->json(null, 204);
     }
 }
