@@ -19,6 +19,7 @@ License
 Before getting started, ensure that your development environment meets the following requirements:
 
 `PHP version 8.0 or above`
+
 `Node.js version 12.0 or above`
 
 ## Installation
@@ -43,12 +44,10 @@ Before getting started, ensure that your development environment meets the follo
    `php artisan key:generate`
 
 7. Run the migrations and seed the database:
+   `php artisan migrate`
 
-`php artisan migrate`
-
-7. Run the application:
-
-`php artisan serve`
+8. Run the application:
+   `php artisan serve`
 
 The project will be available at http://localhost:8000.
 
@@ -57,7 +56,7 @@ The project will be available at http://localhost:8000.
 1. Navigate to the frontend folder:
    `cd frontend`
 2. Install frontend dependencies:
-   ``npm install`
+   `npm install`
 
 3. Adjust environment variables:
    Modify the .env file to specify your API URL.
