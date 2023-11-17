@@ -274,7 +274,7 @@ function login(ev) {
         .then(() => {
             loading.value = false;
 
-            router.push({
+            router.go({
                 name: "dashboard",
             });
         })
